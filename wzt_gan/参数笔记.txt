@@ -1,0 +1,43 @@
+# sal num: 10553 edge num: 42346
+now: 42000 maxheight: 816 maxlenth: 816 size: maxsize: 470016
+all: 42346
+
+详细研究 2600 - 2614 2655左右 2755 - 2775
+
+研究图片尺寸的问题
+研究学习率的问题
+研究预训练的问题
+研究训练次数的问题
+
+2849 爆显存
+train_G_with_source:
+    cal loss1(about 0-1)
+    cal loss2(about 0-1)
+    loss = loss1 * 0.1 + loss2
+    backward(loss)
+
+train_G_with_target:
+    cal loss1(about 1-2)
+    cal loss2(about 1-2)
+    loss = 0.0002 * loss1 + 0.001 * loss2
+    backward(loss)
+
+train_D_with_source/train_D_with_target:
+    cal loss1(about 0-1)
+    cal loss2(about 0-1)
+    loss1 /= 2
+    loss2 /= 2
+    backward(loss1)
+    backward(loss2)
+
+gan:
+    train G:
+        train_G_with_source
+        train_G_with_target
+    train D:
+        train_D_with_source
+        train_D_with_target
+
+boolnet:
+    cal loss(about 50000)
+    backward(loss)

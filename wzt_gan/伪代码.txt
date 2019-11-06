@@ -1,0 +1,60 @@
+/*
+learning rate: 5e-06
+learning rate D: 0.0001
+wight decay: 0.0005
+lambda_adv_target2: 0.001
+
+eptch size: 10
+batch size: 1
+iter size: 10
+num steps: 10000
+*/
+
+建立model
+建立Dominiter 
+
+建立optimizerG = Adam()
+建立optimizerD = Adam()
+
+model读取预训练文件
+
+for epotch
+
+    model.zero_grad()
+    Dominiter.zero_grad()
+
+    for step_size 
+
+        optimizerG.zero_grad()
+        optimizerD.zero_grad()
+
+        for iter_size
+
+            //read image
+            读取source_image, target_image, source_table
+            predS = model(source_image)
+            predT = model(target_image)       
+
+
+            //train G
+            取消D的梯度
+
+            lossG = crossentropy(source_image, source_table) / iter_size
+            lossG.backward()
+
+            lossD = 判别predT是不是source类 * lambda_adv_target2
+            lossD.backward()
+
+            //train D
+            恢复D的梯度
+
+            lossS = 判别predS是不是source类 / iter_size
+            lossT = 判别predT是不是target类 / iter_size
+
+            lossS.backward()
+            lossT.backward()
+        
+        optimizerD.step()
+        optimizerG.step()
+
+

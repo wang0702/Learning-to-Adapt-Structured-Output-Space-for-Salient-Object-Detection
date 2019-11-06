@@ -1,0 +1,3 @@
+@echo off
+python czT-jointwgan.py --data-dir C:/Users/tengshengyu/Desktop/project/PoolNet-master/data/DUTS/DUTS-TR --data-list C:/Users/tengshengyu/Desktop/project/PoolNet-master/data/DUTS/DUTS-TR/train_pair.lst --data-dir-target C:/Users/tengshengyu/Desktop/project/PoolNet-master/data/HED-BSDS_PASCAL --data-list-target C:/Users/tengshengyu/Desktop/project/PoolNet-master/data/HED-BSDS_PASCAL/bsds_pascal_train_pair_r_val_r_small.lst --epotch-size 10
+pause

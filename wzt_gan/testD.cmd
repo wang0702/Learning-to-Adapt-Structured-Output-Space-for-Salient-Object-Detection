@@ -1,0 +1,3 @@
+@echo off
+python czDtest.py --data-dir C:\Users\tengshengyu\Desktop\project\PoolNet-master\data\DUTS\DUTS-TE\DUTS-TE-Image --data-list C:\Users\tengshengyu\Desktop\project\PoolNet-master\data\DUTS\DUTS-TE\test.lst --data-dir-target C:\Users\tengshengyu\Desktop\project\PoolNet-master\data\HED-BSDS_PASCAL\HED-BSDS\test --data-list-target C:\Users\tengshengyu\Desktop\project\PoolNet-master\data\HED-BSDS_PASCAL\HED-BSDS\test.lst
+pause
